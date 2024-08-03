@@ -80,6 +80,9 @@ function Navbar() {
         m={"auto"}
         gap={10}
         p={2}
+        position={"sticky"}
+        top={0}
+        bg={"white"}
       >
         {/* left box of nav */}
         <Box

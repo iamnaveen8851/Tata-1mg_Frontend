@@ -79,6 +79,7 @@ function Navbar() {
         alignItems={"center"}
         m={"auto"}
         gap={10}
+        p={2}
       >
         {/* left box of nav */}
         <Box

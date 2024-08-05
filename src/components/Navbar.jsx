@@ -621,7 +621,9 @@ function Navbar() {
 
       <Box
         // border={"0.5px solid black"}
-
+        bg={"white"}
+        position={"sticky"}
+        top={14}
         display={"flex"}
         justifyContent={"space-between"}
         flexDirection={{
@@ -634,7 +636,7 @@ function Navbar() {
         }}
         p={1}
         gap={{
-          base: 1
+          base: 1,
         }}
         boxShadow="xs"
         alignItems={"center"}
@@ -737,6 +739,8 @@ function Navbar() {
           </Button>
         </Box>
       </Box>
+
+     
     </>
   );
 }

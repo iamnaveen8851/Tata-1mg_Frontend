@@ -12,8 +12,8 @@ function App() {
     <>
       <Navbar />
       <Dropdown />
-      {/* <Homepage /> */}
-      {/* <Footer /> */}
+      <Homepage />
+      <Footer />
     </>
   );
 }

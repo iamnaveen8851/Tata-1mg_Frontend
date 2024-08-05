@@ -31,12 +31,19 @@ import {
   DrawerOverlay,
   IconButton,
   useMediaQuery,
+  Flex,
+  Select,
+  InputGroup,
+  InputRightElement,
+  InputLeftElement,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { FaShoppingCart, FaBars } from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { SearchIcon } from "@chakra-ui/icons";
+import { MdLocationOn } from "react-icons/md";
 
 function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -92,6 +99,7 @@ function Navbar() {
   return (
     <>
       <Box
+        boxShadow="xs"
         display={"flex"}
         justifyContent={"space-around"}
         alignItems={"center"}
@@ -104,21 +112,20 @@ function Navbar() {
       >
         {/* Hamburger Icon for Mobile */}
         {/* {!isLargerThan768 && ( */}
-          <IconButton
-            display={{
-              base : "block",
-              sm : "block",
-              md : "block",
-              lg : "block",
-              xl : "none",
-              "2xl" : "none"
-              
-            }}
-            icon={<FaBars />}
-            variant="outline"
-            onClick={openDrawer}
-            // ml={1}
-          />
+        <IconButton
+          display={{
+            base: "block",
+            sm: "block",
+            md: "block",
+            lg: "block",
+            xl: "none",
+            "2xl": "none",
+          }}
+          icon={<FaBars />}
+          variant="outline"
+          onClick={openDrawer}
+          // ml={1}
+        />
         {/* )} */}
 
         {/* Logo */}
@@ -521,7 +528,7 @@ function Navbar() {
           )}
         </Box>
       </Box>
-
+      {/* for hamburger menu */}
       <Drawer
         isOpen={!isLargerThan768 && isDrawerOpen}
         placement="left"
@@ -609,6 +616,127 @@ function Navbar() {
           </DrawerBody>
         </DrawerContent>
       </Drawer>
+
+      {/* Search bar and Location  Box  */}
+
+      <Box
+        // border={"0.5px solid black"}
+
+        display={"flex"}
+        justifyContent={"space-between"}
+        flexDirection={{
+          base: "column",
+          sm: "column",
+          md: "column",
+          lg: "column",
+          xl: "row",
+          "2xl": "row",
+        }}
+        p={1}
+        gap={{
+          base: 1
+        }}
+        boxShadow="xs"
+        alignItems={"center"}
+      >
+        <Box
+          w={{
+            base: "80%",
+            sm: "80%",
+            md: "70%",
+            lg: "60%",
+            xl: "60%",
+            "2xl": "60%",
+          }}
+          display={"flex"}
+          justifyContent={"space-around"}
+          flexDirection={{
+            base: "column",
+            sm: "column",
+            md: "column",
+            lg: "column",
+            xl: "row",
+            "2xl": "row",
+          }}
+          gap={{
+            base: 4,
+            sm: 4,
+            md: 3,
+            lg: 2,
+            xl: 1,
+            "2xl": 1,
+          }}
+          alignItems={"center"}
+        >
+          {/* Add location Box */}
+          <InputGroup borderRadius={"5px"} ml={2} bg={"#EDF2F7"} w={"45%"}>
+            <InputLeftElement pointerEvents="none">
+              <Icon as={MdLocationOn} color="grey" />
+            </InputLeftElement>
+            <Select
+              icon=""
+              pl={1}
+              textAlign={"center"}
+              fontWeight={650}
+              fontSize={"14px"}
+              borderColor="transparent" // Remove the default border color
+              focusBorderColor="transparent" // Remove the border color when focused
+            >
+              <option value="">--Select-Location--</option>
+              <option value="mumbai">Mumbai</option>
+              <option value="delhi">Delhi</option>
+              <option value="bangalore">Bangalore</option>
+              <option value="chennai">Chennai</option>
+              <option value="kolkata">Kolkata</option>
+              <option value="hyderabad">Hyderabad</option>
+              <option value="pune">Pune</option>
+              <option value="ahmedabad">Ahmedabad</option>
+            </Select>
+          </InputGroup>
+
+          {/* Seach Box */}
+          <InputGroup borderRadius={"5px"} bg={"#EDF2F7"} color={"black"}>
+            <Input
+              borderColor="transparent" // Remove the default border color
+              focusBorderColor="transparent" // Remove the border color when focused
+              placeholder="Search for Medicines and Health Products"
+            />
+            <InputRightElement>
+              <IconButton
+                aria-label="Search"
+                icon={<SearchIcon />}
+                variant="ghost"
+                onClick={() => {
+                  // Implement your search logic here
+                }}
+              />
+            </InputRightElement>
+          </InputGroup>
+        </Box>
+
+        {/* right box */}
+        <Box
+          display={"flex"}
+          justifyContent={"space-around"}
+          flexDirection={{
+            base: "column",
+            sm: "column",
+            md: "column",
+            lg: "column",
+            xl: "row",
+            "2xl": "row",
+          }}
+          gap={{
+            base: 4,
+          }}
+          mr={5}
+        >
+          <Text>QUICK BUY! Get 15% off on medicines*</Text>
+          <Button bg={"tomato"} colorScheme="white">
+            Quick order
+          </Button>
+        </Box>
+      </Box>
     </>
   );
 }

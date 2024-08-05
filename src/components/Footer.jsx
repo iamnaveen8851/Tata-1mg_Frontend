@@ -47,7 +47,6 @@ function Footer() {
           Tata 1mg: Your Favourite Online Pharmacy!
         </Heading>
         <br />
-       
         Tata 1mg is India's leading online chemist with over 2 lakh medicines
         available at the best prices. We are your one-stop destination for other
         healthcare products as well, such as over the counter pharmaceuticals,
@@ -89,7 +88,6 @@ function Footer() {
         <br />
         <Heading fontSize={16}>The Services We Offer</Heading>
         <br />
-       
         Tata 1mg is India's leading digital healthcare platform, where you can
         buy medicines online with discount. Buy medicine online in Delhi,
         Mumbai, Bangalore, Hyderabad, Pune, Gurgaon, Noida, Kolkata, Chennai,
@@ -162,6 +160,14 @@ function Footer() {
         <br />
         <Box
           display={"flex"}
+          flexDirection={{
+            base: "column",
+            sm: "column",
+            md: "column",
+            lg: "row",
+            xl: "row",
+            "2xl": "row",
+          }}
           justifyContent={"space-around"}
           alignItems={"center"}
           // gap={20}

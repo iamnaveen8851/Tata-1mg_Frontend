@@ -109,6 +109,9 @@ function Navbar() {
         position={"sticky"}
         top={0}
         bg={"white"}
+        position={"sticky"}
+        top={0}
+        zIndex={10}
       >
         {/* Hamburger Icon for Mobile */}
         {/* {!isLargerThan768 && ( */}
@@ -624,6 +627,7 @@ function Navbar() {
         bg={"white"}
         position={"sticky"}
         top={14}
+        zIndex={10}
         display={"flex"}
         justifyContent={"space-between"}
         flexDirection={{

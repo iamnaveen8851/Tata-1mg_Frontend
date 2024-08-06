@@ -1,7 +1,14 @@
 import React from "react";
+import FirstSlider from "./sliders/FirstSlider";
+import SecondSlider from "./sliders/SecondSlider";
 
 function Homepage() {
-  return <div>Homepage</div>;
+  return (
+    <>
+      <FirstSlider />
+      <SecondSlider />
+    </>
+  );
 }
 
 export default Homepage;

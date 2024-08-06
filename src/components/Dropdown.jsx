@@ -33,6 +33,12 @@ function Dropdown() {
           xl: 9,
           "2xl": 9,
         }}
+        position={"sticky"}
+        top={
+          '18%'
+        }
+        bg={"white"}
+        zIndex={10}
         m={"auto"}
         // border={"1px solid black"}
         justifyContent={"space-around"}

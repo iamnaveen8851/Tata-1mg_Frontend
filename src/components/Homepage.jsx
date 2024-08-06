@@ -9,37 +9,58 @@ import FourSlider from "./sliders/FourSlider";
 import FeaturedBrands from "./sliders/FeaturedBrands";
 import SkinCare from "./sliders/SkinCare";
 import PopularCare from "./sliders/PopularCombo";
+import { Link } from "react-router-dom";
 
 function Homepage() {
   return (
     <>
-      <FirstSlider />
-      <SecondSlider />
+      <Link to={"/products"}>
+        <FirstSlider />
+      </Link>
+      <Link to={"/products"}>
+        <SecondSlider />
+      </Link>
       <br />
       <br />
-      <ThirdSlider />
+      <Link to={"/products"}>
+        <ThirdSlider />
+      </Link>
       <br />
       <br />
-      <FeaturedBrands />
+      <Link to={"/products"}>
+        <FeaturedBrands />
+      </Link>
 
       <br />
       <br />
-      <Supplement />
+      <Link to={"/products"}>
+        <Supplement />
+      </Link>
       <br />
       <br />
-      <PersonalCare />
+      <Link to={"/products"}>
+        <PersonalCare />
+      </Link>
       <br />
       <br />
-      <FourSlider />
+      <Link to={"/products"}>
+        <FourSlider />
+      </Link>
       <br />
       <br />
-      <BrandSlider />
+      <Link to={"/products"}>
+        <BrandSlider />
+      </Link>
       <br />
       <br />
-      <SkinCare />
+      <Link to={"/products"}>
+        <SkinCare />
+      </Link>
       <br />
       <br />
-      <PopularCare />
+      <Link to={"/products"}>
+        <PopularCare />
+      </Link>
     </>
   );
 }

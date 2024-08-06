@@ -7,5 +7,6 @@
   - react-redux
   - redux-thunk
   - chakra-ui
+  - react-router-dom
 
 

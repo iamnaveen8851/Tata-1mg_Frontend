@@ -44,7 +44,8 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { SearchIcon } from "@chakra-ui/icons";
 import { MdLocationOn } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [isFocused, setIsFocused] = useState(false);
@@ -54,6 +55,8 @@ function Navbar() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [isLargerThan768] = useMediaQuery("(min-width: 768px)");
 
+  const [searchQuery, setSearchQuery] = useState(""); // State for search query
+  const navigate = useNavigate();
   const settings = {
     dots: true,
     infinite: true,
@@ -96,6 +99,14 @@ function Navbar() {
     setIsDrawerOpen(false);
   };
 
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value); // Update search query
+  };
+
+  const handleSearch = () => {
+    navigate("/products");
+
+  };
   return (
     <>
       <Box
@@ -732,15 +743,15 @@ function Navbar() {
               borderColor="transparent" // Remove the default border color
               focusBorderColor="transparent" // Remove the border color when focused
               placeholder="Search for Medicines and Health Products"
+              value={searchQuery}
+              onChange={handleSearchChange}
             />
             <InputRightElement>
               <IconButton
                 aria-label="Search"
                 icon={<SearchIcon />}
                 variant="ghost"
-                onClick={() => {
-                  // Implement your search logic here
-                }}
+                onClick={handleSearch}
               />
             </InputRightElement>
           </InputGroup>

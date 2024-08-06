@@ -54,43 +54,72 @@ function CustomNextArrow(props) {
   );
 }
 
-function SecondSlider() {
+function SkinCare() {
   const secondSlideArr = [
     {
-      img: "https://onemg.gumlet.io/a56b26a0-30f1-4977-96f8-7acf1b3e0e02.png?format=auto",
-      title: "Diabetes",
+      img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/3f1dcb4a12ea4af5b5627abe6db34cd0.jpg",
+      title: "Venusia Max Intensive Moisturizing Lotion",
+      price: 1005,
     },
     {
-      img: "https://onemg.gumlet.io/629aaf65-515f-4069-b730-28618f78597b.png?format=auto",
-      title: "Heart Care",
+      img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/2fe5d1a5dbd64ea09349711c8c00fbd4.jpg",
+      title: "CeraVe Moisturising Lotion for Dry",
+      price: 520,
     },
     {
-      img: "https://onemg.gumlet.io/b251c9cf-8d88-4fb8-8c3c-7b328caa9f70.png?format=auto",
-      title: "Stomach Care",
+      img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/tobacjfovqlzz3v12u5w.jpg",
+      title: "Lacto Calamine Daily Cleansing Wipes",
+      price: 69,
     },
     {
-      img: "https://onemg.gumlet.io/573d8a1a-edd0-46a5-a0fe-01a1c2bcc8f2.png?format=auto",
-      title: "Liver Care",
+      img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/x59orit293eaoo4srldc.jpg",
+      title: "Savlon Germ Protection Wipes",
+      price: 49,
     },
     {
-      img: "https://onemg.gumlet.io/a1af8b43-2836-483d-8709-99eff1cc6f70.png?format=auto",
-      title: "Bone, Joint & Muscle Care",
+      img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/21e177529079430cab79f5055e8587a5.jpg",
+      title: "C-Vit Facial Liposomal Serum with AntiOx",
+      price: 2850,
     },
     {
-      img: "https://onemg.gumlet.io/96f9ed8a-ba62-426c-bd66-6762f40f3370.png?format=auto",
-      title: "Kidney Care",
+      img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/88216bf6e3694ff9a66125b4045e9373.jpg",
+      title: "Sesderma Azelac RU",
+      price: 2650,
     },
     {
-      img: "https://onemg.gumlet.io/730dbe50-4bdc-4fa8-9a09-93bc5d6c6f38.png?format=auto",
-      title: "Derma Care",
+      img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/qwe4rarags0phxarlz8g.jpg",
+      title: "Lacto Calamine Oil Control Wipes ",
+      price: 74.3,
     },
     {
-      img: "https://onemg.gumlet.io/8051e79c-6152-440e-b402-8d1ba8d7c82e.png?format=auto",
-      title: "Respiratory Care",
+      img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/cf320bc174e84ce58a7f803c6cdd53bb.jpg",
+      title: "Venusia Max Intensive Moisturizing Lotion",
+      price: 705,
     },
     {
-      img: "https://onemg.gumlet.io/1627c0d3-a6ed-470a-8b18-94baa9fdbcfc.png?format=auto",
-      title: "Eye Care",
+      img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/c2661631-300c-45a4-a7c3-f46fe9fca127.jpeg",
+      title: "Ahaglow Advanced Skin Rejuvenating",
+      price: 693,
+    },
+    {
+      img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/80e2d53e1c36474eb3e6b9480a7ef2e3.jpg",
+      title: "Cetaphil Moisturising Cream",
+      price: 503,
+    },
+    {
+      img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/c8be7d3b06ef4cd28507bfa8fcdf600e.jpg",
+      title: "Bioderma Sebium Hydra Moisturiser",
+      price: 1195,
+    },
+    {
+      img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/62ee5a32eff740818ad0e4649773fff5.jpg",
+      title: "Cetaphil DAM Daily Advance Ultra",
+      price: 466,
+    },
+    {
+      img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/8afe47628c9644e3be8a31bc37b95dd8.jpg",
+      title: "Venusia Max Intensive Moisturizing Cream",
+      price: 590,
     },
   ];
 
@@ -130,13 +159,13 @@ function SecondSlider() {
   return (
     <Box w={"100%"} m={"auto"} boxShadow={"lg"} position="relative">
       <Text fontSize={18} ml={"3%"}>
-        Shop by health concerns
+        Collagen | supplement of the week
       </Text>
       <Slider {...settings}>
         {secondSlideArr.map((slider, i) => (
           <Box
             _hover={{ boxShadow: "base" }}
-            p={4}
+            p={7}
             key={i}
             display={"flex"}
             flexDirection={"column"}
@@ -147,9 +176,10 @@ function SecondSlider() {
             <Image
               src={slider.img}
               alt={slider.title}
-              w={"100%"}
-              maxW={"200px"}
-              h={"auto"}
+              pl={9}
+              w={"100px"}
+              //   maxW={"200px"}
+              h={"140px"}
             />
             <Text
               fontSize={"13px"}
@@ -159,6 +189,14 @@ function SecondSlider() {
             >
               {slider.title}
             </Text>
+            <Text
+              fontSize={"13px"}
+              fontWeight={"600"}
+              textAlign={"center"}
+              mt={2}
+            >
+              price : ₹ {slider.price}
+            </Text>
           </Box>
         ))}
       </Slider>
@@ -166,4 +204,4 @@ function SecondSlider() {
   );
 }
 
-export default SecondSlider;
+export default SkinCare;

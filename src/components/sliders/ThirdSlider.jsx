@@ -54,43 +54,61 @@ function CustomNextArrow(props) {
   );
 }
 
-function SecondSlider() {
+function ThirdSlider() {
   const secondSlideArr = [
     {
-      img: "https://onemg.gumlet.io/a56b26a0-30f1-4977-96f8-7acf1b3e0e02.png?format=auto",
-      title: "Diabetes",
+      description:
+        "Comprehensive Gold Full Body Checkup with Smart Report Includes 88 tests",
+      price: 2249,
     },
     {
-      img: "https://onemg.gumlet.io/629aaf65-515f-4069-b730-28618f78597b.png?format=auto",
-      title: "Heart Care",
+      description:
+        "Comprehensive Silver Full Body Checkup with Smart Report Includes 80 tests",
+      price: 1899,
     },
     {
-      img: "https://onemg.gumlet.io/b251c9cf-8d88-4fb8-8c3c-7b328caa9f70.png?format=auto",
-      title: "Stomach Care",
+      description:
+        "Comprehensive Platinum Full Body Checkup with Smart Report Includes 101 tests",
+      price: 3599,
     },
     {
-      img: "https://onemg.gumlet.io/573d8a1a-edd0-46a5-a0fe-01a1c2bcc8f2.png?format=auto",
-      title: "Liver Care",
+      description:
+        "Senior Citizen Comprehensive Package Male with Smart Report Includes 84 tests",
+      price: 3749,
     },
     {
-      img: "https://onemg.gumlet.io/a1af8b43-2836-483d-8709-99eff1cc6f70.png?format=auto",
-      title: "Bone, Joint & Muscle Care",
+      description: "Good Health Smart Package Includes 3 tests",
+      price: 399,
     },
     {
-      img: "https://onemg.gumlet.io/96f9ed8a-ba62-426c-bd66-6762f40f3370.png?format=auto",
-      title: "Kidney Care",
+      description:
+        "Good Health Silver Package with Smart Report Includes 65 tests",
+      price: 699,
     },
     {
-      img: "https://onemg.gumlet.io/730dbe50-4bdc-4fa8-9a09-93bc5d6c6f38.png?format=auto",
-      title: "Derma Care",
+      description:
+        "Good Health Gold Package with Smart Report Includes 72 tests",
+      price: 999,
     },
     {
-      img: "https://onemg.gumlet.io/8051e79c-6152-440e-b402-8d1ba8d7c82e.png?format=auto",
-      title: "Respiratory Care",
+      description:
+        "Good Health Platinum Package with Smart Report Includes 74 tests",
+      price: 1499,
     },
     {
-      img: "https://onemg.gumlet.io/1627c0d3-a6ed-470a-8b18-94baa9fdbcfc.png?format=auto",
-      title: "Eye Care",
+      description:
+        "Senior Citizen Advanced Package with Smart Report Includes 61 tests",
+      price: 1675,
+    },
+    {
+      description:
+        "Women Wellness Premium Package with Smart Report Includes 45 tests",
+      price: 1889,
+    },
+    {
+      description:
+        "Men Health Premium Package with Smart Report Includes 44 tests",
+      price: 1889,
     },
   ];
 
@@ -99,8 +117,8 @@ function SecondSlider() {
     infinite: true,
     slidesToShow: 6,
     slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
+    // autoplay: true,
+    // autoplaySpeed: 3000,
     centerMode: true,
     arrows: true,
     nextArrow: <CustomNextArrow />,
@@ -130,7 +148,7 @@ function SecondSlider() {
   return (
     <Box w={"100%"} m={"auto"} boxShadow={"lg"} position="relative">
       <Text fontSize={18} ml={"3%"}>
-        Shop by health concerns
+        Full body health checkups
       </Text>
       <Slider {...settings}>
         {secondSlideArr.map((slider, i) => (
@@ -144,20 +162,14 @@ function SecondSlider() {
             justifyContent={"center"}
             w={{ base: "80%", sm: "60%", md: "50%", lg: "20%" }}
           >
-            <Image
-              src={slider.img}
-              alt={slider.title}
-              w={"100%"}
-              maxW={"200px"}
-              h={"auto"}
-            />
+            <Text>{slider.description}</Text>
             <Text
               fontSize={"13px"}
               fontWeight={"600"}
               textAlign={"center"}
               mt={2}
             >
-              {slider.title}
+              Price : ₹{slider.price}
             </Text>
           </Box>
         ))}
@@ -166,4 +178,4 @@ function SecondSlider() {
   );
 }
 
-export default SecondSlider;
+export default ThirdSlider;

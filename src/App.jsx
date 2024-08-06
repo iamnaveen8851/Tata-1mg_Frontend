@@ -13,7 +13,7 @@ function App() {
       <Navbar />
       <Dropdown />
       <Homepage />
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

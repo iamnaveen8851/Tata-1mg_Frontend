@@ -54,43 +54,34 @@ function CustomNextArrow(props) {
   );
 }
 
-function SecondSlider() {
+function PersonalCare() {
   const secondSlideArr = [
     {
-      img: "https://onemg.gumlet.io/a56b26a0-30f1-4977-96f8-7acf1b3e0e02.png?format=auto",
-      title: "Diabetes",
+      img: "https://onemg.gumlet.io/diagnostics%2F2023-11%2F1699443647_skinn.webp?format=auto",
     },
     {
-      img: "https://onemg.gumlet.io/629aaf65-515f-4069-b730-28618f78597b.png?format=auto",
-      title: "Heart Care",
+      img: "https://onemg.gumlet.io/diagnostics%2F2023-11%2F1699443670_hairr.webp?format=auto",
     },
     {
-      img: "https://onemg.gumlet.io/b251c9cf-8d88-4fb8-8c3c-7b328caa9f70.png?format=auto",
-      title: "Stomach Care",
+      img: "https://onemg.gumlet.io/diagnostics%2F2023-11%2F1699443681_sexuall.webp?format=auto",
     },
     {
-      img: "https://onemg.gumlet.io/573d8a1a-edd0-46a5-a0fe-01a1c2bcc8f2.png?format=auto",
-      title: "Liver Care",
+      img: "https://onemg.gumlet.io/diagnostics%2F2023-11%2F1699443695_orall.webp?format=auto",
     },
     {
-      img: "https://onemg.gumlet.io/a1af8b43-2836-483d-8709-99eff1cc6f70.png?format=auto",
-      title: "Bone, Joint & Muscle Care",
+      img: "https://onemg.gumlet.io/diagnostics%2F2023-11%2F1699443705_elderly.webp?format=auto",
     },
     {
-      img: "https://onemg.gumlet.io/96f9ed8a-ba62-426c-bd66-6762f40f3370.png?format=auto",
-      title: "Kidney Care",
+      img: "https://onemg.gumlet.io/diagnostics%2F2023-11%2F1699443714_baby.webp?format=auto",
     },
     {
-      img: "https://onemg.gumlet.io/730dbe50-4bdc-4fa8-9a09-93bc5d6c6f38.png?format=auto",
-      title: "Derma Care",
+      img: "https://onemg.gumlet.io/diagnostics%2F2023-11%2F1699443722_womenn.webp?format=auto",
     },
     {
-      img: "https://onemg.gumlet.io/8051e79c-6152-440e-b402-8d1ba8d7c82e.png?format=auto",
-      title: "Respiratory Care",
+      img: "https://onemg.gumlet.io/diagnostics%2F2023-11%2F1699443735_menn.webp?format=auto",
     },
     {
-      img: "https://onemg.gumlet.io/1627c0d3-a6ed-470a-8b18-94baa9fdbcfc.png?format=auto",
-      title: "Eye Care",
+      img: "https://onemg.gumlet.io/diagnostics%2F2023-11%2F1699443746_pett.webp?format=auto",
     },
   ];
 
@@ -130,7 +121,7 @@ function SecondSlider() {
   return (
     <Box w={"100%"} m={"auto"} boxShadow={"lg"} position="relative">
       <Text fontSize={18} ml={"3%"}>
-        Shop by health concerns
+        Personal care
       </Text>
       <Slider {...settings}>
         {secondSlideArr.map((slider, i) => (
@@ -151,14 +142,6 @@ function SecondSlider() {
               maxW={"200px"}
               h={"auto"}
             />
-            <Text
-              fontSize={"13px"}
-              fontWeight={"600"}
-              textAlign={"center"}
-              mt={2}
-            >
-              {slider.title}
-            </Text>
           </Box>
         ))}
       </Slider>
@@ -166,4 +149,4 @@ function SecondSlider() {
   );
 }
 
-export default SecondSlider;
+export default PersonalCare;

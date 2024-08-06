@@ -54,43 +54,72 @@ function CustomNextArrow(props) {
   );
 }
 
-function SecondSlider() {
+function PopularCare() {
   const secondSlideArr = [
     {
-      img: "https://onemg.gumlet.io/a56b26a0-30f1-4977-96f8-7acf1b3e0e02.png?format=auto",
-      title: "Diabetes",
+      img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/97fd33b22a134f6abfad3306a94a9c82.jpg",
+      title: "Combo Pack of Volini",
+      price: 587,
     },
     {
-      img: "https://onemg.gumlet.io/629aaf65-515f-4069-b730-28618f78597b.png?format=auto",
-      title: "Heart Care",
+      img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/cr9a2p0evnuzwvw5ksp1.jpg",
+      title: "Acne Care Combo of Cetaphil Oily Skin",
+      price: 825,
     },
     {
-      img: "https://onemg.gumlet.io/b251c9cf-8d88-4fb8-8c3c-7b328caa9f70.png?format=auto",
-      title: "Stomach Care",
+      img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/6e7569ffbb794db79bf9c34af8310198.jpg",
+      title: "Himalaya Wellness Pure Herbs",
+      price: 408,
     },
     {
-      img: "https://onemg.gumlet.io/573d8a1a-edd0-46a5-a0fe-01a1c2bcc8f2.png?format=auto",
-      title: "Liver Care",
+      img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/if0qou7t1ptcaaowcigp.jpg",
+      title: "Accu-Check Active Combo of Glucomet",
+      price: 1931,
     },
     {
-      img: "https://onemg.gumlet.io/a1af8b43-2836-483d-8709-99eff1cc6f70.png?format=auto",
-      title: "Bone, Joint & Muscle Care",
+      img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/38b86c6a33f744afac80ed36d4bb87ba.jpg",
+      title: "Tata 1mg Diabetes Care Combo Pack",
+      price: 562,
     },
     {
-      img: "https://onemg.gumlet.io/96f9ed8a-ba62-426c-bd66-6762f40f3370.png?format=auto",
-      title: "Kidney Care",
+      img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/lvtn5rrf1guolsh7lrfx.jpg",
+      title: "OneTouch Select Plus Glucometer",
+      price: 2333,
     },
     {
-      img: "https://onemg.gumlet.io/730dbe50-4bdc-4fa8-9a09-93bc5d6c6f38.png?format=auto",
-      title: "Derma Care",
+      img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/oexechydeypou9aw45xc.jpg",
+      title: "Pain Relief Combo of Dr Ortho Oil 120ml",
+      price: 541,
     },
     {
-      img: "https://onemg.gumlet.io/8051e79c-6152-440e-b402-8d1ba8d7c82e.png?format=auto",
-      title: "Respiratory Care",
+      img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/qdkxnbhl24dgn02m7fc4.jpg",
+      title: "Anti-oxidants Combo of Organic India",
+      price: 615,
     },
     {
-      img: "https://onemg.gumlet.io/1627c0d3-a6ed-470a-8b18-94baa9fdbcfc.png?format=auto",
-      title: "Eye Care",
+      img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/g6phmkjrdbw3x4nngxlr.jpg",
+      title: "Oral Care Combo of Listerine Mouth Wash",
+      price: 593,
+    },
+    {
+      img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/bolfsewohhzisrq5kcao.jpg",
+      title: "Cackle's Combo Pack of Super Japanese",
+      price: 1015,
+    },
+    {
+      img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/qir6i2zlhzeddxa4mqt0.jpg",
+      title: "Immunity Care Combo of 1mg Panch",
+      price: 1195,
+    },
+    {
+      img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/8bd580a5fdf044b096302ab1d65e36b4.jpg",
+      title: "Dr Batra's Combo Pack",
+      price: 632,
+    },
+    {
+      img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/1b2a7bd6b5124f1b9d8d32ebeb4cb492.jpg",
+      title: "Tata 1mg Combo Pack of Tejasya",
+      price: 373,
     },
   ];
 
@@ -130,13 +159,13 @@ function SecondSlider() {
   return (
     <Box w={"100%"} m={"auto"} boxShadow={"lg"} position="relative">
       <Text fontSize={18} ml={"3%"}>
-        Shop by health concerns
+        Collagen | supplement of the week
       </Text>
       <Slider {...settings}>
         {secondSlideArr.map((slider, i) => (
           <Box
             _hover={{ boxShadow: "base" }}
-            p={4}
+            p={7}
             key={i}
             display={"flex"}
             flexDirection={"column"}
@@ -147,9 +176,10 @@ function SecondSlider() {
             <Image
               src={slider.img}
               alt={slider.title}
-              w={"100%"}
-              maxW={"200px"}
-              h={"auto"}
+            //   pl={10}
+              w={"100px"}
+              //   maxW={"200px"}
+              h={"140px"}
             />
             <Text
               fontSize={"13px"}
@@ -159,6 +189,14 @@ function SecondSlider() {
             >
               {slider.title}
             </Text>
+            <Text
+              fontSize={"13px"}
+              fontWeight={"600"}
+              textAlign={"center"}
+              mt={2}
+            >
+              price : ₹ {slider.price}
+            </Text>
           </Box>
         ))}
       </Slider>
@@ -166,4 +204,4 @@ function SecondSlider() {
   );
 }
 
-export default SecondSlider;
+export default PopularCare;

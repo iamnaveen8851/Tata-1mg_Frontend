@@ -54,43 +54,43 @@ function CustomNextArrow(props) {
   );
 }
 
-function SecondSlider() {
+function FourSlider() {
   const secondSlideArr = [
     {
-      img: "https://onemg.gumlet.io/a56b26a0-30f1-4977-96f8-7acf1b3e0e02.png?format=auto",
-      title: "Diabetes",
+      description: "Lipid Profile",
+      price: 314,
     },
     {
-      img: "https://onemg.gumlet.io/629aaf65-515f-4069-b730-28618f78597b.png?format=auto",
-      title: "Heart Care",
+      description: "CBC (Complete Blood Count",
+      price: 279,
     },
     {
-      img: "https://onemg.gumlet.io/b251c9cf-8d88-4fb8-8c3c-7b328caa9f70.png?format=auto",
-      title: "Stomach Care",
+      description: "Thyroid Profile Total (T3, T4 & TSH)",
+      price: 289,
     },
     {
-      img: "https://onemg.gumlet.io/573d8a1a-edd0-46a5-a0fe-01a1c2bcc8f2.png?format=auto",
-      title: "Liver Care",
+      description: "KFT with Electrolytes ",
+      price: 349,
     },
     {
-      img: "https://onemg.gumlet.io/a1af8b43-2836-483d-8709-99eff1cc6f70.png?format=auto",
-      title: "Bone, Joint & Muscle Care",
+      description: "LFT (Liver Function Test) Includes 11 tests",
+      price: 289,
     },
     {
-      img: "https://onemg.gumlet.io/96f9ed8a-ba62-426c-bd66-6762f40f3370.png?format=auto",
-      title: "Kidney Care",
+      description: "Vitamin B12",
+      price: 339,
     },
     {
-      img: "https://onemg.gumlet.io/730dbe50-4bdc-4fa8-9a09-93bc5d6c6f38.png?format=auto",
-      title: "Derma Care",
+      description: "Frequent Pain Check Profile Includes 4 tests",
+      price: 299,
     },
     {
-      img: "https://onemg.gumlet.io/8051e79c-6152-440e-b402-8d1ba8d7c82e.png?format=auto",
-      title: "Respiratory Care",
+      description: "Lipid Profile, Non Fasting Includes 8 tests",
+      price: 319,
     },
     {
-      img: "https://onemg.gumlet.io/1627c0d3-a6ed-470a-8b18-94baa9fdbcfc.png?format=auto",
-      title: "Eye Care",
+      description: "Coronavirus Covid-19 Test- RT-PCR ",
+      price: 450,
     },
   ];
 
@@ -99,8 +99,8 @@ function SecondSlider() {
     infinite: true,
     slidesToShow: 6,
     slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
+    // autoplay: true,
+    // autoplaySpeed: 3000,
     centerMode: true,
     arrows: true,
     nextArrow: <CustomNextArrow />,
@@ -130,7 +130,7 @@ function SecondSlider() {
   return (
     <Box w={"100%"} m={"auto"} boxShadow={"lg"} position="relative">
       <Text fontSize={18} ml={"3%"}>
-        Shop by health concerns
+        Pathology Tests | Up to 70% off
       </Text>
       <Slider {...settings}>
         {secondSlideArr.map((slider, i) => (
@@ -144,20 +144,14 @@ function SecondSlider() {
             justifyContent={"center"}
             w={{ base: "80%", sm: "60%", md: "50%", lg: "20%" }}
           >
-            <Image
-              src={slider.img}
-              alt={slider.title}
-              w={"100%"}
-              maxW={"200px"}
-              h={"auto"}
-            />
+            <Text>{slider.description}</Text>
             <Text
               fontSize={"13px"}
               fontWeight={"600"}
               textAlign={"center"}
               mt={2}
             >
-              {slider.title}
+              Price : ₹{slider.price}
             </Text>
           </Box>
         ))}
@@ -166,4 +160,4 @@ function SecondSlider() {
   );
 }
 
-export default SecondSlider;
+export default FourSlider;

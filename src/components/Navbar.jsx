@@ -712,7 +712,7 @@ function Navbar() {
               borderColor="transparent" // Remove the default border color
               focusBorderColor="transparent" // Remove the border color when focused
             >
-              <option value="">--Select-Location--</option>
+              <option value="">Select-Location</option>
               <option value="mumbai">Mumbai</option>
               <option value="delhi">Delhi</option>
               <option value="bangalore">Bangalore</option>

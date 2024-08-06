@@ -488,36 +488,38 @@ function Navbar() {
               <Text fontSize={15}>Offers</Text>
               &nbsp;
               {/* Cart Icon Popover */}
-              <Popover
-                variant="none"
-                isOpen={popoverOpen}
-                onOpen={() => setPopoverOpen(true)}
-                onClose={() => setPopoverOpen(false)}
-                closeOnBlur={false} // Prevent closing when clicking outside
-              >
-                <PopoverTrigger>
-                  <Button
-                    onMouseEnter={() => setPopoverOpen(true)}
-                    onMouseLeave={() => setPopoverOpen(false)}
-                    leftIcon={<Icon as={FaShoppingCart} />}
-                    variant="none"
-                  >
-                    {/* Cart Icon Button */}
-                  </Button>
-                </PopoverTrigger>
-                <PopoverContent
-                  onMouseEnter={() => setPopoverOpen(true)} // Keep popover open on hover
-                  onMouseLeave={() => setPopoverOpen(false)} // Close popover when mouse leaves
+              <Link to={"/cart"}>
+                <Popover
+                  variant="none"
+                  isOpen={popoverOpen}
+                  onOpen={() => setPopoverOpen(true)}
+                  onClose={() => setPopoverOpen(false)}
+                  closeOnBlur={false} // Prevent closing when clicking outside
                 >
-                  <PopoverArrow />
-                  <PopoverCloseButton />
-                  <PopoverHeader>Shopping Cart</PopoverHeader>
-                  <PopoverBody>
-                    {/* Add cart contents here */}
-                    Your cart is empty.
-                  </PopoverBody>
-                </PopoverContent>
-              </Popover>
+                  <PopoverTrigger>
+                    <Button
+                      onMouseEnter={() => setPopoverOpen(true)}
+                      onMouseLeave={() => setPopoverOpen(false)}
+                      leftIcon={<Icon as={FaShoppingCart} />}
+                      variant="none"
+                    >
+                      {/* Cart Icon Button */}
+                    </Button>
+                  </PopoverTrigger>
+                  <PopoverContent
+                    onMouseEnter={() => setPopoverOpen(true)} // Keep popover open on hover
+                    onMouseLeave={() => setPopoverOpen(false)} // Close popover when mouse leaves
+                  >
+                    <PopoverArrow />
+                    <PopoverCloseButton />
+                    <PopoverHeader>Shopping Cart</PopoverHeader>
+                    <PopoverBody>
+                      {/* Add cart contents here */}
+                      Your cart is empty.
+                    </PopoverBody>
+                  </PopoverContent>
+                </Popover>
+              </Link>
               &nbsp;
               <Link fontSize={14}>Need Help?</Link>
             </>

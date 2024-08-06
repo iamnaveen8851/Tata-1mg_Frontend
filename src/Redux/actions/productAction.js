@@ -22,7 +22,7 @@ export const fetchData = (sortByPrice, filterByTitle) => {
       const {
         data: { data },
       } = await axios.get(url);
-      console.log(data);
+      // console.log(data);
       dispatch(getProducts(data));
     } catch (error) {
       console.log(error);

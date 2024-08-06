@@ -5,7 +5,7 @@ import {
   FormLabel,
   Image,
   Input,
-  Link,
+  // Link,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -44,7 +44,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { SearchIcon } from "@chakra-ui/icons";
 import { MdLocationOn } from "react-icons/md";
-
+import { Link } from "react-router-dom";
 function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [isFocused, setIsFocused] = useState(false);
@@ -132,18 +132,20 @@ function Navbar() {
         {/* )} */}
 
         {/* Logo */}
-        <Image
-          maxW={{
-            base: "25%",
-            sm: "20%",
-            md: "20%",
-            lg: "10%",
-            xl: "8%",
-            "2xl": "8%",
-          }} // Ensure the logo size does not increase
-          h={"auto"}
-          src="https://www.1mg.com/images/tata_1mg_logo.svg"
-        />
+        <Link to="/">
+          <Image
+            maxW={{
+              base: "70%",
+              sm: "70%",
+              md: "70%",
+              lg: "70%",
+              xl: "80%",
+              "2xl": "80%",
+            }} // Ensure the logo size does not increase
+            h={"auto"}
+            src="https://www.1mg.com/images/tata_1mg_logo.svg"
+          />
+        </Link>
 
         {isLargerThan768 && (
           <Box
@@ -158,11 +160,13 @@ function Navbar() {
             alignItems={"center"}
             gap={2}
           >
-            <Link fontSize={13}>MEDICINES</Link>
+            <Link style={{ fontSize: "13px" }}>MEDICINES</Link>
             <Link
-              fontSize={13}
-              display={"flex"}
-              style={{ textDecoration: "none" }}
+              style={{
+                fontSize: "13px",
+                display: "flex",
+                textDecoration: "none",
+              }}
             >
               LAB TESTS &nbsp;
               <Text
@@ -175,12 +179,30 @@ function Navbar() {
                 &nbsp; SAFE &nbsp;
               </Text>
             </Link>
-            <Link fontSize={13}>CONSULT DOCTORS</Link>
-            <Link fontSize={13}>CANCER CARE</Link>
             <Link
-              fontSize={13}
-              display={"flex"}
-              style={{ textDecoration: "none" }}
+              style={{
+                fontSize: "13px",
+                display: "flex",
+                textDecoration: "none",
+              }}
+            >
+              CONSULT DOCTORS
+            </Link>
+            <Link
+              style={{
+                fontSize: "13px",
+                display: "flex",
+                textDecoration: "none",
+              }}
+            >
+              CANCER CARE
+            </Link>
+            <Link
+              style={{
+                fontSize: "13px",
+                display: "flex",
+                textDecoration: "none",
+              }}
             >
               PARTNERSHIPS &nbsp;
               <Text
@@ -194,9 +216,11 @@ function Navbar() {
               </Text>
             </Link>
             <Link
-              fontSize={13}
-              display={"flex"}
-              style={{ textDecoration: "none" }}
+              style={{
+                fontSize: "13px",
+                display: "flex",
+                textDecoration: "none",
+              }}
             >
               CARE PLAN &nbsp;
               <Text
@@ -743,8 +767,6 @@ function Navbar() {
           </Button>
         </Box>
       </Box>
-
-     
     </>
   );
 }

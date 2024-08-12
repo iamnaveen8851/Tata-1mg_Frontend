@@ -127,6 +127,11 @@ function Navbar() {
       console.log(error.message);
     }
   };
+
+  const handleClick = (id) => {
+    navigate(`/products/${id}`);
+  };
+
   return (
     <>
       <Box
@@ -818,7 +823,12 @@ function Navbar() {
                       p={2}
                       borderBottom="1px solid #e2e8f0"
                     >
-                      <Text fontSize="sm">{product.title}</Text>
+                      <Text
+                        fontSize="sm"
+                        onClick={() => handleClick(product._id)}
+                      >
+                        {product.title}
+                      </Text>
                     </Box>
                   ))
                 ) : (

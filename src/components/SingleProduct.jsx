@@ -1,4 +1,12 @@
-import { Box, Button, Flex, Heading, Image, Text, useToast } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  Heading,
+  Image,
+  Text,
+  useToast,
+} from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 // import { useDispatch, useSelector } from "react-redux";
@@ -7,7 +15,7 @@ import { useParams } from "react-router-dom";
 function SingleProduct() {
   const { id } = useParams();
   const [data, setData] = useState({});
-  const toast = useToast()
+  const toast = useToast();
   console.log(id);
   async function singleData(id) {
     try {
@@ -58,10 +66,10 @@ function SingleProduct() {
         justifyContent={"space-between"}
         alignItems={"center"}
         m="auto"
-        p={10}
+        p={20}
       >
-        <Box boxShadow="xl" ml="5%">
-          <Image src={data.img} />
+        <Box boxShadow="base" p={10} ml="15%">
+          <Image w={"150px"} src={data.img} />
         </Box>
         <Box p={10}>
           <Heading>{data.title}</Heading>
@@ -71,7 +79,7 @@ function SingleProduct() {
           </Text>
           <br />
           <Button
-            bg="blue"
+            bg="tomato"
             color="white"
             _hover={{ background: "green", color: "white" }}
             onClick={addToCart}

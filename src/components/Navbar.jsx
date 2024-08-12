@@ -44,8 +44,9 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { SearchIcon } from "@chakra-ui/icons";
 import { MdLocationOn } from "react-icons/md";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import axios from "axios";
+import SearchResults from "./Products/SearchResults";
 function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [isFocused, setIsFocused] = useState(false);
@@ -57,6 +58,7 @@ function Navbar() {
 
   const [searchQuery, setSearchQuery] = useState(""); // State for search query
   const [searchResults, setSearchResults] = useState([]);
+  const [isSearch, setIsSearch] = useState(false);
   const navigate = useNavigate();
   const settings = {
     dots: true,
@@ -110,8 +112,6 @@ function Navbar() {
       );
 
       setSearchResults(data);
-      
-
     } catch (error) {
       console.log(error);
     }
@@ -124,16 +124,17 @@ function Navbar() {
       } = await axios.get(
         `https://tata-1mg-backend.onrender.com/products?search=${searchQuery}`
       );
-      console.log(data);
+
+      setSearchResults("");
+      setIsSearch(true);
     } catch (error) {
       console.log(error.message);
     }
   };
 
   const handleClick = (id) => {
-    setSearchQuery(null)
+    setSearchQuery(null);
     navigate(`/products/${id}`);
-
   };
 
   return (
@@ -868,6 +869,9 @@ function Navbar() {
           </Button>
         </Box>
       </Box>
+
+      {/* /fix it  */}
+      {/* {isSearch ? (<SearchResults searchResults={searchResults} />) : (null)} */}
     </>
   );
 }

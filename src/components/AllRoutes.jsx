@@ -4,15 +4,16 @@ import AllProducts from "./Products/AllProducts";
 import Homepage from "./Homepage";
 import Cart from "./Cart";
 import SingleProduct from "./SingleProduct";
-import SearchResults from "./SearchResults";
+// import SearchResults from "./SearchResults";
 
 function AllRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Homepage />} />
       <Route path="/products" element={<AllProducts />} />
+      {/* <Route path="/products?search" element={<SearchResults />} /> */}
       <Route path={`/products/:id`} element={<SingleProduct />} />
-      <Route path={`/products/:id`} element={<SearchResults />} />
+
       <Route path="/cart" element={<Cart />} />
     </Routes>
   );

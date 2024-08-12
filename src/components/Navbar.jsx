@@ -56,6 +56,7 @@ function Navbar() {
   const [isLargerThan768] = useMediaQuery("(min-width: 768px)");
 
   const [searchQuery, setSearchQuery] = useState(""); // State for search query
+  const [searchResults, setSearchResults] = useState([]);
   const navigate = useNavigate();
   const settings = {
     dots: true,
@@ -99,13 +100,32 @@ function Navbar() {
     setIsDrawerOpen(false);
   };
 
-  const handleSearchChange = (e) => {
-    setSearchQuery(e.target.value); // Update search query
+  const handleSearchChange = async (e) => {
+    setSearchQuery(e.target.value);
+    try {
+      const {
+        data: { data },
+      } = await axios.get(
+        `https://tata-1mg-backend.onrender.com/products?search=${searchQuery}`
+      );
+
+      setSearchResults(data);
+    } catch (error) {
+      console.log(error);
+    }
   };
-
-  const handleSearch = () => {
-    navigate("/products");
-
+  const handleSearch = async (searchQuery) => {
+    // navigate("/products");
+    try {
+      const {
+        data: { data },
+      } = await axios.get(
+        `https://tata-1mg-backend.onrender.com/products?search=${searchQuery}`
+      );
+      console.log(data);
+    } catch (error) {
+      console.log(error.message);
+    }
   };
   return (
     <>
@@ -738,7 +758,7 @@ function Navbar() {
           </InputGroup>
 
           {/* Seach Box */}
-          <InputGroup borderRadius={"5px"} bg={"#EDF2F7"} color={"black"}>
+          {/* <InputGroup borderRadius={"5px"} bg={"#EDF2F7"} color={"black"}>
             <Input
               borderColor="transparent" // Remove the default border color
               focusBorderColor="transparent" // Remove the border color when focused
@@ -754,6 +774,60 @@ function Navbar() {
                 onClick={handleSearch}
               />
             </InputRightElement>
+          </InputGroup> */}
+          <InputGroup
+            borderRadius={"5px"}
+            bg={"#EDF2F7"}
+            color={"black"}
+            position="relative"
+          >
+            <Input
+              borderColor="transparent"
+              focusBorderColor="transparent"
+              placeholder="Search for Medicines and Health Products"
+              value={searchQuery}
+              onChange={handleSearchChange}
+            />
+            <InputRightElement>
+              <IconButton
+                aria-label="Search"
+                icon={<SearchIcon />}
+                variant="ghost"
+                onClick={() => handleSearch(searchQuery)}
+              />
+            </InputRightElement>
+
+            {/* Search Results Box */}
+            {searchQuery && (
+              <Box
+                position="absolute"
+                top="100%"
+                left={0}
+                right={0}
+                bg="white"
+                borderRadius="md"
+                boxShadow="md"
+                zIndex={20}
+                maxHeight="300px"
+                overflowY="auto"
+              >
+                {searchResults.length > 0 ? (
+                  searchResults.map((product) => (
+                    <Box
+                      key={product.id}
+                      p={2}
+                      borderBottom="1px solid #e2e8f0"
+                    >
+                      <Text fontSize="sm">{product.title}</Text>
+                    </Box>
+                  ))
+                ) : (
+                  <Text p={2} textAlign="center">
+                    No results found
+                  </Text>
+                )}
+              </Box>
+            )}
           </InputGroup>
         </Box>
 

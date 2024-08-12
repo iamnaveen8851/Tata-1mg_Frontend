@@ -25,6 +25,7 @@ function Dropdown() {
     <>
       {/* Dropdown Menu */}
       <SimpleGrid
+        
         columns={{
           base: 2,
           sm: 2,
@@ -33,12 +34,10 @@ function Dropdown() {
           xl: 9,
           "2xl": 9,
         }}
-        position={"sticky"}
-        top={
-          '18%'
-        }
+        position={"relative"}
+        top={"18%"}
         bg={"white"}
-        zIndex={10}
+        zIndex={0}
         m={"auto"}
         // border={"1px solid black"}
         justifyContent={"space-around"}

@@ -110,6 +110,8 @@ function Navbar() {
       );
 
       setSearchResults(data);
+      
+
     } catch (error) {
       console.log(error);
     }
@@ -129,7 +131,9 @@ function Navbar() {
   };
 
   const handleClick = (id) => {
+    setSearchQuery(null)
     navigate(`/products/${id}`);
+
   };
 
   return (

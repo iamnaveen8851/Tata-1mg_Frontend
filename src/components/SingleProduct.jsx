@@ -68,8 +68,8 @@ function SingleProduct() {
         m="auto"
         p={20}
       >
-        <Box boxShadow="base" p={10} ml="15%">
-          <Image w={"150px"} src={data.img} />
+        <Box boxShadow="base" p={5} ml="15%">
+          <Image w={"180px"} src={data.img} />
         </Box>
         <Box p={10}>
           <Heading>{data.title}</Heading>
